@@ -23,10 +23,12 @@ DEVICE_PACKAGE_OVERLAYS := device/samsung/toro/overlay
 PRODUCT_COPY_FILES += \
 	device/samsung/toro/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
 	device/sample/etc/apns-conf_verizon.xml:system/etc/apns-conf.xml \
-	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
+	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml \
+	device/samsung/toro/gps.omap4.so:/system/vendor/lib/hw/gps.omap4.so \
+	device/samsung/toro/sirfgps.conf:/system/vendor/etc/sirfgps.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.config.vc_call_vol_steps=7
+	ro.config.vc_call_vol_steps=10
 
 $(call inherit-product, device/samsung/tuna/device.mk)
 $(call inherit-product-if-exists, vendor/samsung/toro/device-vendor.mk)
